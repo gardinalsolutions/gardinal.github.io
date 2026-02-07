@@ -1,4 +1,4 @@
-<!-- index.html (rewritten) -->
+<!-- index.html (Jotform integrated) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,7 +34,6 @@
   <header class="header" id="siteHeader">
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Gardinal Solutions home">
-        <!-- Smaller logo + fade-on-scroll handled in CSS/JS -->
         <img class="brand__logo" id="brandLogo" src="logo.png" alt="Gardinal Solutions logo">
         <span class="brand__text">
           <span class="brand__name">Gardinal Solutions</span>
@@ -50,7 +49,6 @@
           <span class="sr-only">Menu</span>
         </button>
 
-        <!-- Properly aligned menu container -->
         <div class="nav__menu" id="navMenu">
           <a href="#services" class="nav__link">Services</a>
           <a href="#process" class="nav__link">How it works</a>
@@ -318,7 +316,8 @@
               <li>1 SEO article (your topic)</li>
               <li>Bundle recommendation</li>
             </ul>
-            <a class="btn btn--block" href="#contact">Get started free</a>
+            <!-- CHANGE: added js-planCta + data-plan -->
+            <a class="btn btn--block js-planCta" href="#contact" data-plan="Preview Starter">Get started free</a>
             <p class="fine">Best for: first contact from cold email</p>
           </article>
 
@@ -336,7 +335,8 @@
               <li>Basic on-page SEO</li>
               <li>Email support</li>
             </ul>
-            <a class="btn btn--block" href="#contact">Choose Launch</a>
+            <!-- CHANGE -->
+            <a class="btn btn--block js-planCta" href="#contact" data-plan="Launch Plan">Choose Launch</a>
             <p class="fine">Best for: single-location SMEs</p>
           </article>
 
@@ -356,7 +356,8 @@
               <li>Competitor insights (monthly)</li>
               <li>Review reply templates</li>
             </ul>
-            <a class="btn btn--block" href="#contact">Choose Growth</a>
+            <!-- CHANGE -->
+            <a class="btn btn--block js-planCta" href="#contact" data-plan="Growth Plan">Choose Growth</a>
             <p class="fine">Best for: competitive markets</p>
           </article>
 
@@ -375,7 +376,8 @@
               <li>Monthly performance summary</li>
               <li>Priority support</li>
             </ul>
-            <a class="btn btn--block" href="#contact">Choose Authority</a>
+            <!-- CHANGE -->
+            <a class="btn btn--block js-planCta" href="#contact" data-plan="Authority Plan">Choose Authority</a>
             <p class="fine">Best for: multi-location growth</p>
           </article>
         </div>
@@ -568,59 +570,32 @@
             </div>
           </div>
 
-          <form class="form" id="leadForm">
+          <!-- CHANGE: Jotform embedded (replaces old HTML form) -->
+          <div class="form" id="leadForm">
+            <!-- A small dynamic label ABOVE the embedded form -->
             <div class="form__row">
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" placeholder="Jane Smith" required />
+              <label id="contactCtaLabel" style="display:block;">Request free preview</label>
+              <div class="fine" id="contactCtaNote" style="margin-top:6px;">
+                Choose a plan above, then submit the form. You’ll receive a reply by email.
+              </div>
             </div>
 
-            <div class="form__row">
-              <label for="company">Business name</label>
-              <input id="company" name="company" type="text" placeholder="ABC Services Ltd" required />
+            <div style="width:100%; min-height: 720px;">
+              <iframe
+                id="jotformFrame"
+                title="Gardinal Solutions Inquiry Form"
+                src="https://form.jotform.com/260375550677060"
+                style="width:100%; height: 720px; border:0; border-radius: 16px;"
+                loading="lazy"
+                allow="geolocation; microphone; camera"
+              ></iframe>
             </div>
 
-            <div class="form__row">
-              <label for="clientEmail">Your email</label>
-              <input id="clientEmail" name="clientEmail" type="email" placeholder="you@company.com" required />
-            </div>
-
-            <div class="form__row">
-              <label for="country">Country / market</label>
-              <input id="country" name="country" type="text" placeholder="e.g., UK, UAE, USA, Sri Lanka" />
-            </div>
-
-            <div class="form__row">
-              <label for="topic">Free article topic</label>
-              <input id="topic" name="topic" type="text" placeholder="e.g., 'Plumber in Manchester' or 'Best dental implants in Dubai'" required />
-            </div>
-
-            <div class="form__row">
-              <label for="servicesNeed">Services needed</label>
-              <select id="servicesNeed" name="servicesNeed">
-                <option value="Website build">Website build</option>
-                <option value="Website maintenance">Website maintenance</option>
-                <option value="SEO keyword research">SEO keyword research</option>
-                <option value="SEO articles">SEO articles</option>
-                <option value="Competitor insights">Competitor insights</option>
-                <option value="Review follow-up support">Review follow-up support</option>
-              </select>
-            </div>
-
-            <div class="form__row">
-              <label for="competitors">Competitors (optional)</label>
-              <input id="competitors" name="competitors" type="text" placeholder="Competitor website URLs or names" />
-            </div>
-
-            <div class="form__row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us what you want the website to achieve and any style preferences."></textarea>
-            </div>
-
-            <button class="btn btn--block" type="submit">Request free preview</button>
-            <p class="fine fine--center" id="formNote">
-              This form opens an email draft on your device (no server needed). Add a backend later if you want.
+            <p class="fine fine--center" id="formNote" style="margin-top:10px;">
+              Form powered by Jotform. If it doesn’t load, open it here:
+              <a class="textLink" href="https://form.jotform.com/260375550677060" target="_blank" rel="noopener">Open the form</a>
             </p>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -653,5 +628,45 @@
       <a class="btn btn--small" href="#contact">Free preview + 1 article</a>
     </div>
   </main>
+
+  <!-- CHANGE: minimal inline JS for plan click -> label + (optional) iframe prefill -->
+  <script>
+    (function () {
+      const frame = document.getElementById("jotformFrame");
+      const label = document.getElementById("contactCtaLabel");
+
+      const BASE_FORM_URL = "https://form.jotform.com/260375550677060";
+
+      function setCtaByPlan(planName) {
+        const isPreview = (planName || "").toLowerCase().includes("preview");
+        const text = isPreview ? "Request free preview" : "Let's Get Started";
+        if (label) label.textContent = text;
+
+        // Optional prefill attempt:
+        // If your Jotform has a field that can be prefilled by query string key "selectedPlan",
+        // it will auto-fill. If not, the form still works normally.
+        if (frame) {
+          const url = BASE_FORM_URL + "?selectedPlan=" + encodeURIComponent(planName || "Preview Starter");
+          frame.src = url;
+        }
+      }
+
+      // Default state
+      setCtaByPlan("Preview Starter");
+
+      // Pricing CTAs drive label + prefill
+      document.querySelectorAll(".js-planCta").forEach((cta) => {
+        cta.addEventListener("click", () => {
+          const plan = cta.getAttribute("data-plan") || "Preview Starter";
+          setCtaByPlan(plan);
+        });
+      });
+
+      // Any generic link to #contact defaults to Preview Starter behavior
+      document.querySelectorAll('a[href="#contact"]:not(.js-planCta)').forEach((a) => {
+        a.addEventListener("click", () => setCtaByPlan("Preview Starter"));
+      });
+    })();
+  </script>
 </body>
 </html>
