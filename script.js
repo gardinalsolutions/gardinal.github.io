@@ -1,14 +1,15 @@
-/* script.js — full behavior:
+/* script.js — full behavior (updated for Jotform embed + plan CTA):
    - topbar hides + header fades/hides on scroll
    - mobile nav toggle + outside click close
    - FAQ accordion
    - scroll reveal animations
    - copy email button
-   - mailto form submit (no backend)
+   - plan CTA logic (Preview Starter keeps “Request free preview”; others “Let’s Get Started”)
+   - Jotform embed support (no mailto submit; form is handled by Jotform)
 */
 (() => {
-  const qs = (s, p=document) => p.querySelector(s);
-  const qsa = (s, p=document) => [...p.querySelectorAll(s)];
+  const qs = (s, p = document) => p.querySelector(s);
+  const qsa = (s, p = document) => [...p.querySelectorAll(s)];
 
   // Year in footer
   const yearEl = qs("#year");
@@ -82,43 +83,49 @@
 
   targets.forEach(el => io.observe(el));
 
-  // Contact form -> opens mailto (no backend)
-  const leadForm = qs("#leadForm");
-  if (leadForm) {
-    leadForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(leadForm);
+  // ===== Plan CTA logic + Jotform embed support =====
+  // Assumes your HTML includes:
+  // - pricing CTAs with class .js-planCta and data-plan="Preview Starter|Launch Plan|Growth Plan|Authority Plan"
+  // - #contactCtaLabel above the Jotform embed (optional)
+  // - #jotformFrame iframe (optional)
+  const contactCtaLabel = qs("#contactCtaLabel");
+  const jotformFrame = qs("#jotformFrame");
 
-      const name = (data.get("name") || "").toString().trim();
-      const company = (data.get("company") || "").toString().trim();
-      const clientEmail = (data.get("clientEmail") || "").toString().trim();
-      const country = (data.get("country") || "").toString().trim();
-      const topic = (data.get("topic") || "").toString().trim();
-      const servicesNeed = (data.get("servicesNeed") || "").toString().trim();
-      const competitors = (data.get("competitors") || "").toString().trim();
-      const message = (data.get("message") || "").toString().trim();
+  // Keep your actual form URL here (same as your provided link)
+  const BASE_FORM_URL = "https://form.jotform.com/260375550677060";
 
-      const to = (emailTextEl?.textContent || "hello@gardinalsolutions.com").trim();
-      const subject = encodeURIComponent(`Free Preview Request — ${company || "New Client"}`);
-      const body = encodeURIComponent(
-`Name: ${name}
-Business: ${company}
-Email: ${clientEmail}
-Country/Market: ${country}
-Requested Service: ${servicesNeed}
-Free Article Topic: ${topic}
-Competitors: ${competitors}
+  const setCtaByPlan = (planName) => {
+    const plan = (planName || "Preview Starter").toString();
+    const isPreview = plan.toLowerCase().includes("preview");
 
-Message:
-${message}
-`
-      );
+    // ✅ Label rule requested
+    const labelText = isPreview ? "Request free preview" : "Let's Get Started";
 
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    if (contactCtaLabel) contactCtaLabel.textContent = labelText;
+
+    // Optional: attempt prefill by query param (harmless if Jotform ignores it)
+    if (jotformFrame) {
+      jotformFrame.src = `${BASE_FORM_URL}?selectedPlan=${encodeURIComponent(plan)}`;
+    }
+  };
+
+  // Default behavior when arriving at contact via normal links
+  setCtaByPlan("Preview Starter");
+
+  // Pricing CTAs drive the label change
+  qsa(".js-planCta").forEach(cta => {
+    cta.addEventListener("click", () => {
+      const plan = cta.getAttribute("data-plan") || "Preview Starter";
+      setCtaByPlan(plan);
     });
-  }
+  });
 
-  // Topbar + Header disappearing on scroll
+  // Any other #contact link defaults to Preview Starter behavior
+  qsa('a[href="#contact"]:not(.js-planCta)').forEach(a => {
+    a.addEventListener("click", () => setCtaByPlan("Preview Starter"));
+  });
+
+  // ===== Topbar + Header disappearing on scroll =====
   const topbar = qs(".topbar");
   const header = qs(".header");
   if (topbar && header) {
