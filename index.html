@@ -1,0 +1,657 @@
+<!-- index.html (rewritten) -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Gardinal Solutions builds and maintains modern websites, delivers SEO keyword research and SEO articles, benchmarks your presence vs competitors, and supports review follow-up. Free preview website + first SEO article." />
+  <title>Gardinal Solutions | Websites, SEO & Content</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="pill">International service • Remote-first delivery</div>
+      <div class="topbar__actions">
+        <button class="linklike" id="copyEmailBtn" type="button">Copy email</button>
+        <span class="sep">•</span>
+        <a class="topbar__link" href="#contact">Get the free preview</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="Gardinal Solutions home">
+        <!-- Smaller logo + fade-on-scroll handled in CSS/JS -->
+        <img class="brand__logo" id="brandLogo" src="logo.png" alt="Gardinal Solutions logo">
+        <span class="brand__text">
+          <span class="brand__name">Gardinal Solutions</span>
+          <span class="brand__tag">Websites • SEO • Content • Reviews</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" id="navToggle" type="button" aria-controls="navMenu" aria-expanded="false">
+          <span class="nav__line" aria-hidden="true"></span>
+          <span class="nav__line" aria-hidden="true"></span>
+          <span class="nav__line" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <!-- Properly aligned menu container -->
+        <div class="nav__menu" id="navMenu">
+          <a href="#services" class="nav__link">Services</a>
+          <a href="#process" class="nav__link">How it works</a>
+          <a href="#pricing" class="nav__link">Pricing</a>
+          <a href="#insights" class="nav__link">Insights</a>
+          <a href="#reviews" class="nav__link">Reviews</a>
+          <a href="#faq" class="nav__link">FAQ</a>
+          <a class="btn btn--small nav__cta" href="#contact">Free preview</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="kicker">
+            <span class="dot" aria-hidden="true"></span>
+            Websites built to convert + SEO content that ranks
+          </div>
+
+          <h1 class="hero__title">Make your business look premium online — and get found worldwide.</h1>
+
+          <p class="hero__lead">
+            Gardinal Solutions builds modern websites, writes SEO articles based on real keyword research,
+            and benchmarks your traffic vs competitors. Start with a <strong>free preview website</strong>
+            + your <strong>first SEO article</strong>. Continue only if you like what you see.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#contact">Claim the free preview</a>
+            <a class="btn btn--ghost" href="#pricing">See pricing</a>
+          </div>
+
+          <div class="hero__proof">
+            <div class="proofCard">
+              <div class="proofCard__big">Free</div>
+              <div class="proofCard__small">Preview website</div>
+            </div>
+            <div class="proofCard">
+              <div class="proofCard__big">Free</div>
+              <div class="proofCard__small">First SEO article</div>
+            </div>
+            <div class="proofCard">
+              <div class="proofCard__big">Clear</div>
+              <div class="proofCard__small">Next-step plan</div>
+            </div>
+          </div>
+
+          <p class="hero__fine">
+            No pressure. If you don’t like the preview, you can still keep the first article.
+          </p>
+        </div>
+
+        <div class="hero__panel">
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">Preview Snapshot (Example)</span>
+              <span class="panel__badge">Free</span>
+            </div>
+
+            <div class="panel__body">
+              <div class="metric">
+                <div class="metric__label">Website clarity & conversions</div>
+                <div class="metric__bar"><span style="width: 86%"></span></div>
+                <div class="metric__note">Cleaner structure + stronger CTAs</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric__label">SEO topic opportunities</div>
+                <div class="metric__bar"><span style="width: 78%"></span></div>
+                <div class="metric__note">Service + location + intent clusters</div>
+              </div>
+
+              <div class="metric">
+                <div class="metric__label">Competitor gap visibility</div>
+                <div class="metric__bar"><span style="width: 90%"></span></div>
+                <div class="metric__note">Content gaps + quick wins</div>
+              </div>
+
+              <div class="panel__miniGrid">
+                <div class="miniCard">
+                  <div class="miniCard__top">You get</div>
+                  <div class="miniCard__main">Homepage preview + layout</div>
+                </div>
+                <div class="miniCard">
+                  <div class="miniCard__top">Plus</div>
+                  <div class="miniCard__main">1 publish-ready SEO article</div>
+                </div>
+              </div>
+
+              <div class="panel__cta">
+                <a class="btn btn--small" href="#contact">Get yours</a>
+                <a class="btn btn--small btn--ghost" href="#process">Process</a>
+              </div>
+            </div>
+          </div>
+          <div class="glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="strip" aria-label="Trust strip">
+      <div class="container strip__inner">
+        <div class="strip__item">
+          <span class="strip__label">Best for</span>
+          <span class="strip__value">SMEs • Services • Clinics • Trades • Restaurants • Online brands</span>
+        </div>
+        <div class="strip__item">
+          <span class="strip__label">Delivery</span>
+          <span class="strip__value">International • Remote-first • Fast follow-up</span>
+        </div>
+        <div class="strip__item">
+          <span class="strip__label">Support</span>
+          <span class="strip__value">Maintenance • Content • Review reply support</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>What we do</h2>
+          <p>Designed to improve first impressions, increase inquiries, and grow search visibility.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Website building</h3>
+            <p>Modern, mobile-first websites built for clarity, trust, and conversions.</p>
+            <ul class="checklist">
+              <li>Landing pages & multi-page sites</li>
+              <li>Clear CTA & lead capture</li>
+              <li>International-friendly structure</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Website maintenance</h3>
+            <p>Ongoing updates so your site stays fast, secure, and current.</p>
+            <ul class="checklist">
+              <li>Monthly updates & improvements</li>
+              <li>Content edits & new sections</li>
+              <li>Performance housekeeping</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>SEO keyword research</h3>
+            <p>We map search intent to pages and content topics that drive qualified leads.</p>
+            <ul class="checklist">
+              <li>Keyword clusters & page mapping</li>
+              <li>Content plan & publishing priorities</li>
+              <li>On-page SEO checklist</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>SEO articles</h3>
+            <p>Practical articles aligned with search intent — service, location, or product topics.</p>
+            <ul class="checklist">
+              <li>Publish-ready formatting</li>
+              <li>Internal linking suggestions</li>
+              <li>Conversion-focused writing</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Competitor insights</h3>
+            <p>We compare your presence with competitors to find content gaps and quick wins.</p>
+            <ul class="checklist">
+              <li>Topic & page gap analysis</li>
+              <li>Priority action list</li>
+              <li>Positioning improvements</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Review follow-up support</h3>
+            <p>Professional review replies build trust and sales — we help you respond consistently.</p>
+            <ul class="checklist">
+              <li>Reply templates (good/neutral/bad)</li>
+              <li>Brand tone alignment</li>
+              <li>Follow-up routines</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section--muted" id="process">
+      <div class="container">
+        <div class="section__head">
+          <h2>How it works</h2>
+          <p>Simple, fast, proof-driven — ideal for cold outreach and first impressions.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <div class="step__body">
+              <h3>Tell us your business</h3>
+              <p>Share your services, location/market, and goals (competitors optional).</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__num">2</div>
+            <div class="step__body">
+              <h3>We deliver the free preview</h3>
+              <p>You get a preview website + your first SEO article (free).</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__num">3</div>
+            <div class="step__body">
+              <h3>You review and request changes</h3>
+              <p>We refine the direction and confirm what you want next.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__num">4</div>
+            <div class="step__body">
+              <h3>Choose a plan to continue</h3>
+              <p>Pick a bundle for maintenance + SEO content + insights.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout__icon" aria-hidden="true">✓</div>
+          <div class="callout__content">
+            <strong>Starter offer:</strong> preview website + first SEO article is free. Continue only if you like the quality.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <h2>Plans (international pricing)</h2>
+          <p>Low entry cost, strong deliverables, and clear outcomes. Upgrade anytime.</p>
+        </div>
+
+        <div class="pricing pricing--4">
+          <article class="priceCard priceCard--free">
+            <div class="priceCard__top">
+              <h3>Preview Starter</h3>
+              <p class="priceCard__tag">Try us first — no risk</p>
+            </div>
+            <div class="priceCard__price">
+              <span class="price">$0</span><span class="per">Free</span>
+            </div>
+            <ul class="checklist checklist--dense">
+              <li>Preview website layout</li>
+              <li>1 SEO article (your topic)</li>
+              <li>Bundle recommendation</li>
+            </ul>
+            <a class="btn btn--block" href="#contact">Get started free</a>
+            <p class="fine">Best for: first contact from cold email</p>
+          </article>
+
+          <article class="priceCard">
+            <div class="priceCard__top">
+              <h3>Launch Plan</h3>
+              <p class="priceCard__tag">Get online & start growing</p>
+            </div>
+            <div class="priceCard__price">
+              <span class="price">$79</span><span class="per">/month</span>
+            </div>
+            <ul class="checklist checklist--dense">
+              <li>Website maintenance</li>
+              <li>1 SEO article/month</li>
+              <li>Basic on-page SEO</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn btn--block" href="#contact">Choose Launch</a>
+            <p class="fine">Best for: single-location SMEs</p>
+          </article>
+
+          <article class="priceCard priceCard--featured">
+            <div class="badge">Most popular</div>
+            <div class="priceCard__top">
+              <h3>Growth Plan</h3>
+              <p class="priceCard__tag">Faster ranking + better leads</p>
+            </div>
+            <div class="priceCard__price">
+              <span class="price">$149</span><span class="per">/month</span>
+            </div>
+            <ul class="checklist checklist--dense">
+              <li>Maintenance + improvements</li>
+              <li>3 SEO articles/month</li>
+              <li>Keyword research + plan</li>
+              <li>Competitor insights (monthly)</li>
+              <li>Review reply templates</li>
+            </ul>
+            <a class="btn btn--block" href="#contact">Choose Growth</a>
+            <p class="fine">Best for: competitive markets</p>
+          </article>
+
+          <article class="priceCard">
+            <div class="priceCard__top">
+              <h3>Authority Plan</h3>
+              <p class="priceCard__tag">Scale across regions</p>
+            </div>
+            <div class="priceCard__price">
+              <span class="price">$299</span><span class="per">/month</span>
+            </div>
+            <ul class="checklist checklist--dense">
+              <li>Advanced improvements</li>
+              <li>6 SEO articles/month</li>
+              <li>Competitor gap strategy</li>
+              <li>Monthly performance summary</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn--block" href="#contact">Choose Authority</a>
+            <p class="fine">Best for: multi-location growth</p>
+          </article>
+        </div>
+
+        <p class="note">
+          Need e-commerce, booking, or multilingual? We’ll quote fairly and keep it simple.
+        </p>
+      </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="section section--muted" id="insights">
+      <div class="container">
+        <div class="section__head">
+          <h2>Competitor insights</h2>
+          <p>We identify what competitors do better, where they get traffic, and the fastest path to outperform them.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Content gaps</h3>
+            <p>We map their topics/pages vs yours, then prioritize what to create first.</p>
+            <ul class="checklist">
+              <li>Missing pages & topics</li>
+              <li>Likely keyword clusters</li>
+              <li>Quick wins list</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Conversion improvements</h3>
+            <p>More traffic is useless without leads — we structure pages to convert.</p>
+            <ul class="checklist">
+              <li>Clear positioning & CTA flow</li>
+              <li>Trust sections (reviews/FAQ)</li>
+              <li>Mobile-first improvements</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote">
+          <p>“The goal isn’t just traffic — it’s qualified inquiries. We build the site, write the content, and support the follow-up.”</p>
+          <span>— Gardinal Solutions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <h2>Client feedback</h2>
+          <p>Below are <strong>sample placeholders</strong> to show the layout. Replace with real client feedback as you collect it.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="testimonial">
+            <div class="testimonial__top">
+              <span class="tag">Sample</span>
+              <span class="stars" aria-label="5 stars">★★★★★</span>
+            </div>
+            <p class="testimonial__text">
+              “Our site looks premium now, and the messaging is clear. The free preview made it easy to trust the process.”
+            </p>
+            <div class="testimonial__by">— Ayesha, UAE • Service business</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial__top">
+              <span class="tag">Sample</span>
+              <span class="stars" aria-label="5 stars">★★★★★</span>
+            </div>
+            <p class="testimonial__text">
+              “The SEO article was clean, helpful, and actually matched what customers search for. Great structure and tone.”
+            </p>
+            <div class="testimonial__by">— Mark, UK • Local services</div>
+          </article>
+
+          <article class="testimonial">
+            <div class="testimonial__top">
+              <span class="tag">Sample</span>
+              <span class="stars" aria-label="5 stars">★★★★★</span>
+            </div>
+            <p class="testimonial__text">
+              “Competitor insights showed exactly what pages we were missing. The plan was simple and easy to execute.”
+            </p>
+            <div class="testimonial__by">— Priya, India • Clinic</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG TEASER -->
+    <section class="section section--muted" id="blog">
+      <div class="container">
+        <div class="section__head">
+          <h2>SEO blog (starter topics)</h2>
+          <p>Publishing consistent content builds trust and long-term search traffic.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--soft">
+            <h3>How a modern website increases inquiries</h3>
+            <p>Structure, trust sections, and CTAs that turn visitors into customers.</p>
+            <a class="textLink" href="#contact">Request a free preview →</a>
+          </article>
+          <article class="card card--soft">
+            <h3>Keyword research basics for SMEs</h3>
+            <p>How to target service + location + intent keywords for better leads.</p>
+            <a class="textLink" href="#contact">Get your first article free →</a>
+          </article>
+          <article class="card card--soft">
+            <h3>How to respond to reviews professionally</h3>
+            <p>Templates and tone that protect your brand and increase conversions.</p>
+            <a class="textLink" href="#contact">Ask for review support →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p>Quick answers for prospects who click your cold email.</p>
+        </div>
+
+        <div class="faq">
+          <button class="faq__q" aria-expanded="false">What exactly is free?</button>
+          <div class="faq__a">
+            <p>You get a preview website layout and one SEO article on your chosen topic. No obligation to continue.</p>
+          </div>
+
+          <button class="faq__q" aria-expanded="false">Do you work internationally?</button>
+          <div class="faq__a">
+            <p>Yes. We operate remotely and support clients across multiple countries and markets.</p>
+          </div>
+
+          <button class="faq__q" aria-expanded="false">Can you maintain the website?</button>
+          <div class="faq__a">
+            <p>Yes. Maintenance is included in paid plans, including updates and ongoing improvements.</p>
+          </div>
+
+          <button class="faq__q" aria-expanded="false">What topics can the free SEO article be about?</button>
+          <div class="faq__a">
+            <p>Any service, location, or product topic you want to target for your customers.</p>
+          </div>
+
+          <button class="faq__q" aria-expanded="false">How do competitor insights work?</button>
+          <div class="faq__a">
+            <p>We identify content gaps, likely keyword opportunities, and conversion improvements based on competitor positioning.</p>
+          </div>
+
+          <button class="faq__q" aria-expanded="false">Do you provide review reply help?</button>
+          <div class="faq__a">
+            <p>Yes. We provide reply templates and routines so you respond consistently and professionally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--muted" id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__left">
+            <h2>Claim your free preview + first SEO article</h2>
+            <p>
+              Send the basics and we’ll prepare: <strong>(1)</strong> a preview website layout and <strong>(2)</strong> a publish-ready SEO article.
+            </p>
+
+            <div class="contact__bullets">
+              <div class="bullet"><span class="bullet__dot"></span>Preview website</div>
+              <div class="bullet"><span class="bullet__dot"></span>1 SEO article (free)</div>
+              <div class="bullet"><span class="bullet__dot"></span>Bundle recommendation</div>
+            </div>
+
+            <div class="contact__meta">
+              <div class="metaCard">
+                <div class="metaCard__label">Email</div>
+                <div class="metaCard__value" id="emailText">hello@gardinalsolutions.com</div>
+                <div class="metaCard__note">Replace with your real email later</div>
+              </div>
+              <div class="metaCard">
+                <div class="metaCard__label">WhatsApp</div>
+                <div class="metaCard__value">Add later</div>
+                <div class="metaCard__note">International-friendly support</div>
+              </div>
+            </div>
+          </div>
+
+          <form class="form" id="leadForm">
+            <div class="form__row">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Smith" required />
+            </div>
+
+            <div class="form__row">
+              <label for="company">Business name</label>
+              <input id="company" name="company" type="text" placeholder="ABC Services Ltd" required />
+            </div>
+
+            <div class="form__row">
+              <label for="clientEmail">Your email</label>
+              <input id="clientEmail" name="clientEmail" type="email" placeholder="you@company.com" required />
+            </div>
+
+            <div class="form__row">
+              <label for="country">Country / market</label>
+              <input id="country" name="country" type="text" placeholder="e.g., UK, UAE, USA, Sri Lanka" />
+            </div>
+
+            <div class="form__row">
+              <label for="topic">Free article topic</label>
+              <input id="topic" name="topic" type="text" placeholder="e.g., 'Plumber in Manchester' or 'Best dental implants in Dubai'" required />
+            </div>
+
+            <div class="form__row">
+              <label for="servicesNeed">Services needed</label>
+              <select id="servicesNeed" name="servicesNeed">
+                <option value="Website build">Website build</option>
+                <option value="Website maintenance">Website maintenance</option>
+                <option value="SEO keyword research">SEO keyword research</option>
+                <option value="SEO articles">SEO articles</option>
+                <option value="Competitor insights">Competitor insights</option>
+                <option value="Review follow-up support">Review follow-up support</option>
+              </select>
+            </div>
+
+            <div class="form__row">
+              <label for="competitors">Competitors (optional)</label>
+              <input id="competitors" name="competitors" type="text" placeholder="Competitor website URLs or names" />
+            </div>
+
+            <div class="form__row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us what you want the website to achieve and any style preferences."></textarea>
+            </div>
+
+            <button class="btn btn--block" type="submit">Request free preview</button>
+            <p class="fine fine--center" id="formNote">
+              This form opens an email draft on your device (no server needed). Add a backend later if you want.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <div class="brand brand--footer">
+            <img class="brand__logo brand__logo--footer" src="logo.png" alt="Gardinal Solutions logo">
+            <div class="brand__text">
+              <div class="brand__name">Gardinal Solutions</div>
+              <div class="brand__tag">Websites • SEO • Content • Reviews</div>
+            </div>
+          </div>
+          <p class="footer__fine">© <span id="year"></span> Gardinal Solutions. All rights reserved.</p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#insights">Insights</a>
+          <a href="#contact">Free preview</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floatCta">
+      <a class="btn btn--small" href="#contact">Free preview + 1 article</a>
+    </div>
+  </main>
+</body>
+</html>
