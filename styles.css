@@ -1,10 +1,12 @@
 /* styles.css — full theme + restored layout + animations + top ribbon/header disappearing
    ✅ Keeps previous look (full component styles)
-   ✅ Logo is ~3× bigger than the earlier “44px” size (desktop), but responsive to avoid breaking header
-   ✅ "Free Preview" CTA text is forced white
+   ✅ Logo is large + responsive (desktop ~132px)
+   ✅ "Free Preview" CTA text forced white
    ✅ Topbar hides + header fades/hides (classes toggled by script.js)
+   ✅ Jotform iframe embed styling (clean + responsive)
 */
 
+/* ===== Theme ===== */
 :root{
   --bg:#dfd9c5;
   --bg2:#f4f1e6;
@@ -29,10 +31,10 @@
   --container:1120px;
 
   --topbar-h:46px;
-  --header-h:84px; /* slightly taller to fit big logo */
+  --header-h:84px;
 }
 
-/* Reset */
+/* ===== Reset ===== */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -45,7 +47,48 @@ body{
     radial-gradient(900px 520px at 45% 95%, rgba(31,138,76,.08), transparent 60%),
     linear-gradient(180deg, var(--bg), var(--bg2));
   line-height:1.5;
+  position:relative;
+  overflow-x:hidden;
 }
+
+/* subtle calm background motion */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.55;
+  filter: blur(0px);
+  transform: translate3d(0,0,0);
+  will-change: transform;
+}
+body::before{
+  background:
+    radial-gradient(420px 280px at 18% 20%, rgba(160,107,43,.10), transparent 68%),
+    radial-gradient(380px 260px at 82% 18%, rgba(31,35,40,.06), transparent 70%),
+    radial-gradient(520px 360px at 55% 92%, rgba(31,138,76,.06), transparent 70%);
+  animation: bgFloat1 16s ease-in-out infinite;
+}
+body::after{
+  background:
+    radial-gradient(520px 360px at 20% 85%, rgba(160,107,43,.08), transparent 70%),
+    radial-gradient(520px 320px at 90% 72%, rgba(31,35,40,.05), transparent 72%);
+  animation: bgFloat2 20s ease-in-out infinite;
+  opacity:.42;
+}
+@keyframes bgFloat1{
+  0%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(18px,-10px,0)}
+  100%{transform:translate3d(0,0,0)}
+}
+@keyframes bgFloat2{
+  0%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(-16px,12px,0)}
+  100%{transform:translate3d(0,0,0)}
+}
+
 a{color:inherit; text-decoration:none}
 a:hover{opacity:.92}
 .container{width:min(var(--container), calc(100% - 32px)); margin:0 auto}
@@ -134,7 +177,7 @@ a:hover{opacity:.92}
   gap:16px;
 }
 
-/* Brand */
+/* ===== Brand ===== */
 .brand{display:flex; align-items:center; gap:14px; min-width:0}
 .brand__text{display:flex; flex-direction:column; line-height:1.05; min-width:0}
 .brand__name{
@@ -154,7 +197,7 @@ a:hover{opacity:.92}
   text-overflow:ellipsis;
 }
 
-/* ✅ LOGO: ~3× bigger than prior 44px => 132px (but controlled with header height + responsive) */
+/* ✅ Large visible logo (safe sizing) */
 .brand__logo{
   width: 132px !important;
   height: 132px !important;
@@ -162,7 +205,6 @@ a:hover{opacity:.92}
   max-height: 132px !important;
   object-fit: contain !important;
 
-  /* visible on beige + keeps edges */
   background: rgba(251,250,246,.92) !important;
   border: 1px solid rgba(22,24,28,.14) !important;
   border-radius: 20px !important;
@@ -172,7 +214,6 @@ a:hover{opacity:.92}
   transition: opacity .35s ease, transform .35s ease;
   will-change: opacity, transform;
 }
-/* footer logo smaller */
 .brand__logo--footer{
   width: 44px !important;
   height: 44px !important;
@@ -184,7 +225,7 @@ a:hover{opacity:.92}
   border:0 !important;
 }
 
-/* Nav */
+/* ===== Nav ===== */
 .nav{display:flex; align-items:center; gap:14px; position:relative}
 .nav__toggle{
   display:none;
@@ -213,12 +254,12 @@ a:hover{opacity:.92}
   color:rgba(22,24,28,.78);
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn{
   display:inline-flex; justify-content:center; align-items:center; gap:10px;
   border:1px solid rgba(31,35,40,.22);
   background:linear-gradient(135deg, rgba(31,35,40,.98), rgba(58,63,70,.94));
-  color:#fff; /* ✅ always white text */
+  color:#fff;
   font-weight:800;
   padding:12px 16px;
   border-radius:16px;
@@ -235,7 +276,7 @@ a:hover{opacity:.92}
 .btn--small{padding:9px 12px; border-radius:14px; font-size:13px}
 .btn--block{width:100%}
 
-/* ✅ Free Preview CTA in nav */
+/* ✅ Force Free Preview CTA text visible */
 .nav__menu .btn,
 .nav__menu .nav__cta{ color:#fff !important; }
 
@@ -533,7 +574,7 @@ select:focus-visible{
 .faq__a{display:none; padding:0 14px 14px 14px; color:rgba(22,24,28,.70)}
 .faq__q[aria-expanded="true"] + .faq__a{display:block}
 
-/* Contact */
+/* ===== Contact ===== */
 .contact{
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -567,6 +608,7 @@ select:focus-visible{
 .metaCard__value{font-weight:900; margin-top:5px}
 .metaCard__note{font-size:12px; color:rgba(22,24,28,.52); margin-top:5px}
 
+/* Form wrapper (also used for embedded Jotform container) */
 .form{
   border-radius:var(--radius2);
   border:1px solid rgba(22,24,28,.12);
@@ -591,7 +633,17 @@ input:focus, textarea:focus, select:focus{
 }
 .fine--center{text-align:center}
 
-/* Footer */
+/* ✅ Jotform iframe (clean embed) */
+#jotformFrame{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:16px;
+  background:rgba(251,250,246,.96);
+  box-shadow:0 10px 30px rgba(22,24,28,.08);
+}
+
+/* ===== Footer ===== */
 .footer{
   padding:28px 0;
   border-top:1px solid rgba(22,24,28,.10);
@@ -618,7 +670,7 @@ input:focus, textarea:focus, select:focus{
   transform: translateY(0);
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 1100px){
   .pricing--4{grid-template-columns:1fr 1fr}
 }
@@ -631,7 +683,6 @@ input:focus, textarea:focus, select:focus{
   .strip__inner{grid-template-columns:1fr; gap:10px}
   .footer__inner{flex-direction:column}
   .contact__meta{grid-template-columns:1fr}
-  /* reduce logo slightly on smaller screens */
   .brand__logo{
     width: 96px !important;
     height: 96px !important;
@@ -682,7 +733,6 @@ input:focus, textarea:focus, select:focus{
   .floatCta{left:16px; right:16px}
   .floatCta .btn{width:100%}
 
-  /* mobile logo size (still big but safe) */
   .brand__logo{
     width: 84px !important;
     height: 84px !important;
@@ -690,4 +740,15 @@ input:focus, textarea:focus, select:focus{
     max-height: 84px !important;
     padding: 7px !important;
   }
+
+  /* give iframe more vertical room on small screens */
+  #jotformFrame{
+    border-radius:14px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; animation:none !important}
+  html{scroll-behavior:auto}
 }
