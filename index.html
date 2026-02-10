@@ -1,4 +1,3 @@
-<!-- index.html (Jotform integrated) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,7 +52,8 @@
           <a href="#services" class="nav__link">Services</a>
           <a href="#process" class="nav__link">How it works</a>
           <a href="#pricing" class="nav__link">Pricing</a>
-          <a href="#insights" class="nav__link">Insights</a>
+          <a href="#about" class="nav__link">About</a>
+          <a href="#extra" class="nav__link">Extra</a>
           <a href="#reviews" class="nav__link">Reviews</a>
           <a href="#faq" class="nav__link">FAQ</a>
           <a class="btn btn--small nav__cta" href="#contact">Free preview</a>
@@ -64,49 +64,49 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero" id="home">
+    <section class="hero hero--bg" id="home">
       <div class="container hero__grid">
         <div class="hero__content">
-          <div class="kicker">
+          <div class="kicker kicker--onDark">
             <span class="dot" aria-hidden="true"></span>
             Websites built to convert + SEO content that ranks
           </div>
 
-          <h1 class="hero__title">Make your business look premium online — and get found worldwide.</h1>
+          <h1 class="hero__title hero__title--onDark">Make your business look premium online — and get found worldwide.</h1>
 
-          <p class="hero__lead">
+          <p class="hero__lead hero__lead--onDark">
             Gardinal Solutions builds modern websites, writes SEO articles based on real keyword research,
-            and benchmarks your traffic vs competitors. Start with a <strong>free preview website</strong>
+            and benchmarks your presence vs competitors. Start with a <strong>free preview website</strong>
             + your <strong>first SEO article</strong>. Continue only if you like what you see.
           </p>
 
           <div class="hero__cta">
             <a class="btn" href="#contact">Claim the free preview</a>
-            <a class="btn btn--ghost" href="#pricing">See pricing</a>
+            <a class="btn btn--ghost btn--ghostOnDark" href="#pricing">See pricing</a>
           </div>
 
           <div class="hero__proof">
-            <div class="proofCard">
+            <div class="proofCard proofCard--onDark">
               <div class="proofCard__big">Free</div>
               <div class="proofCard__small">Preview website</div>
             </div>
-            <div class="proofCard">
+            <div class="proofCard proofCard--onDark">
               <div class="proofCard__big">Free</div>
               <div class="proofCard__small">First SEO article</div>
             </div>
-            <div class="proofCard">
+            <div class="proofCard proofCard--onDark">
               <div class="proofCard__big">Clear</div>
               <div class="proofCard__small">Next-step plan</div>
             </div>
           </div>
 
-          <p class="hero__fine">
+          <p class="hero__fine hero__fine--onDark">
             No pressure. If you don’t like the preview, you can still keep the first article.
           </p>
         </div>
 
         <div class="hero__panel">
-          <div class="panel">
+          <div class="panel panel--onDark">
             <div class="panel__head">
               <span class="panel__title">Preview Snapshot (Example)</span>
               <span class="panel__badge">Free</span>
@@ -294,10 +294,10 @@
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="section" id="pricing">
+    <!-- PRICING (fixed contrast) -->
+    <section class="section pricingSection" id="pricing">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--onDark">
           <h2>Plans (international pricing)</h2>
           <p>Low entry cost, strong deliverables, and clear outcomes. Upgrade anytime.</p>
         </div>
@@ -311,12 +311,11 @@
             <div class="priceCard__price">
               <span class="price">$0</span><span class="per">Free</span>
             </div>
-            <ul class="checklist checklist--dense">
+            <ul class="checklist checklist--dense checklist--onDark">
               <li>Preview website layout</li>
               <li>1 SEO article (your topic)</li>
               <li>Bundle recommendation</li>
             </ul>
-            <!-- CHANGE: added js-planCta + data-plan -->
             <a class="btn btn--block js-planCta" href="#contact" data-plan="Preview Starter">Get started free</a>
             <p class="fine">Best for: first contact from cold email</p>
           </article>
@@ -329,13 +328,12 @@
             <div class="priceCard__price">
               <span class="price">$79</span><span class="per">/month</span>
             </div>
-            <ul class="checklist checklist--dense">
+            <ul class="checklist checklist--dense checklist--onDark">
               <li>Website maintenance</li>
               <li>1 SEO article/month</li>
               <li>Basic on-page SEO</li>
               <li>Email support</li>
             </ul>
-            <!-- CHANGE -->
             <a class="btn btn--block js-planCta" href="#contact" data-plan="Launch Plan">Choose Launch</a>
             <p class="fine">Best for: single-location SMEs</p>
           </article>
@@ -349,14 +347,13 @@
             <div class="priceCard__price">
               <span class="price">$149</span><span class="per">/month</span>
             </div>
-            <ul class="checklist checklist--dense">
+            <ul class="checklist checklist--dense checklist--onDark">
               <li>Maintenance + improvements</li>
               <li>3 SEO articles/month</li>
               <li>Keyword research + plan</li>
               <li>Competitor insights (monthly)</li>
               <li>Review reply templates</li>
             </ul>
-            <!-- CHANGE -->
             <a class="btn btn--block js-planCta" href="#contact" data-plan="Growth Plan">Choose Growth</a>
             <p class="fine">Best for: competitive markets</p>
           </article>
@@ -369,48 +366,126 @@
             <div class="priceCard__price">
               <span class="price">$299</span><span class="per">/month</span>
             </div>
-            <ul class="checklist checklist--dense">
+            <ul class="checklist checklist--dense checklist--onDark">
               <li>Advanced improvements</li>
               <li>6 SEO articles/month</li>
               <li>Competitor gap strategy</li>
               <li>Monthly performance summary</li>
               <li>Priority support</li>
             </ul>
-            <!-- CHANGE -->
             <a class="btn btn--block js-planCta" href="#contact" data-plan="Authority Plan">Choose Authority</a>
             <p class="fine">Best for: multi-location growth</p>
           </article>
         </div>
 
-        <p class="note">
+        <p class="note note--onDark">
           Need e-commerce, booking, or multilingual? We’ll quote fairly and keep it simple.
         </p>
       </div>
     </section>
 
-    <!-- INSIGHTS -->
-    <section class="section section--muted" id="insights">
+    <!-- ABOUT (fixed readability) -->
+    <section class="section section--imageAccent" id="about">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--onDark">
+          <h2>About us</h2>
+          <p>Clear websites, real outcomes, and a straightforward process.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card card--solidOnImage">
+            <h3>AI-powered delivery (transparent)</h3>
+            <p>
+              We use AI to speed up building, writing, and research — while keeping the output clean, structured,
+              and business-focused. The goal is simple: a premium website and content that helps you get inquiries.
+            </p>
+            <ul class="checklist checklist--onDark">
+              <li>AI-assisted structure and content drafting</li>
+              <li>Human review for clarity and conversion</li>
+              <li>Fast iteration and updates</li>
+            </ul>
+          </div>
+
+          <div class="card card--solidOnImage">
+            <h3>Why we started</h3>
+            <p>
+              We started this service after creating hundreds of websites for organizations across different sectors —
+              including government, private sector businesses, hospitals, and schools. This business runs on this website,
+              so we understand how important it is to keep things clean, fast, and trustworthy.
+            </p>
+            <p class="fine fine--onDark">
+              If you want a simple website that looks premium and performs well, we’ll keep it clear and measurable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA -->
+    <section class="section extra extra--bg" id="extra">
+      <div class="container">
+        <div class="section__head section__head--onDark">
+          <h2>Extra</h2>
+          <p>High-value add-ons when you want more than a website.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--dark">
+            <h3>AI chat assistant integration</h3>
+            <p>We integrate an AI assistant into your website and tailor it to provide helpful, personalized answers.</p>
+            <ul class="checklist checklist--onDark">
+              <li>Assistant embedded into your site</li>
+              <li>Business-specific Q&A and flows</li>
+              <li>Lead-friendly messaging</li>
+            </ul>
+          </article>
+
+          <article class="card card--dark">
+            <h3>SOP + Menu development</h3>
+            <p>Restaurant SOP development, menu support, and training materials designed for consistency and sales.</p>
+            <ul class="checklist checklist--onDark">
+              <li>SOP documentation & routines</li>
+              <li>Menu development support</li>
+              <li>Training materials & guides</li>
+            </ul>
+          </article>
+
+          <article class="card card--dark">
+            <h3>Local SEO review replies</h3>
+            <p>We help you reply consistently to Google Business Profile (GMB) reviews to build trust and conversions.</p>
+            <ul class="checklist checklist--onDark">
+              <li>Reply templates (good/neutral/bad)</li>
+              <li>Brand tone alignment</li>
+              <li>Simple follow-up routine</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="section" id="insights">
+      <div class="container">
+        <div class="section__head section__head--onDark">
           <h2>Competitor insights</h2>
           <p>We identify what competitors do better, where they get traffic, and the fastest path to outperform them.</p>
         </div>
 
         <div class="grid grid--2">
-          <div class="card">
+          <div class="card card--dark">
             <h3>Content gaps</h3>
             <p>We map their topics/pages vs yours, then prioritize what to create first.</p>
-            <ul class="checklist">
+            <ul class="checklist checklist--onDark">
               <li>Missing pages & topics</li>
               <li>Likely keyword clusters</li>
               <li>Quick wins list</li>
             </ul>
           </div>
 
-          <div class="card">
+          <div class="card card--dark">
             <h3>Conversion improvements</h3>
             <p>More traffic is useless without leads — we structure pages to convert.</p>
-            <ul class="checklist">
+            <ul class="checklist checklist--onDark">
               <li>Clear positioning & CTA flow</li>
               <li>Trust sections (reviews/FAQ)</li>
               <li>Mobile-first improvements</li>
@@ -418,25 +493,24 @@
           </div>
         </div>
 
-        <div class="quote">
+        <div class="quote quote--dark">
           <p>“The goal isn’t just traffic — it’s qualified inquiries. We build the site, write the content, and support the follow-up.”</p>
           <span>— Gardinal Solutions</span>
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS -->
-    <section class="section" id="reviews">
+    <!-- REVIEWS (removed "Sample" tags) -->
+    <section class="section section--muted" id="reviews">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--onDark">
           <h2>Client feedback</h2>
-          <p>Below are <strong>sample placeholders</strong> to show the layout. Replace with real client feedback as you collect it.</p>
+          <p>Replace these with real client feedback as you collect it.</p>
         </div>
 
         <div class="grid grid--3">
           <article class="testimonial">
             <div class="testimonial__top">
-              <span class="tag">Sample</span>
               <span class="stars" aria-label="5 stars">★★★★★</span>
             </div>
             <p class="testimonial__text">
@@ -447,7 +521,6 @@
 
           <article class="testimonial">
             <div class="testimonial__top">
-              <span class="tag">Sample</span>
               <span class="stars" aria-label="5 stars">★★★★★</span>
             </div>
             <p class="testimonial__text">
@@ -458,7 +531,6 @@
 
           <article class="testimonial">
             <div class="testimonial__top">
-              <span class="tag">Sample</span>
               <span class="stars" aria-label="5 stars">★★★★★</span>
             </div>
             <p class="testimonial__text">
@@ -470,38 +542,10 @@
       </div>
     </section>
 
-    <!-- BLOG TEASER -->
-    <section class="section section--muted" id="blog">
-      <div class="container">
-        <div class="section__head">
-          <h2>SEO blog (starter topics)</h2>
-          <p>Publishing consistent content builds trust and long-term search traffic.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card card--soft">
-            <h3>How a modern website increases inquiries</h3>
-            <p>Structure, trust sections, and CTAs that turn visitors into customers.</p>
-            <a class="textLink" href="#contact">Request a free preview →</a>
-          </article>
-          <article class="card card--soft">
-            <h3>Keyword research basics for SMEs</h3>
-            <p>How to target service + location + intent keywords for better leads.</p>
-            <a class="textLink" href="#contact">Get your first article free →</a>
-          </article>
-          <article class="card card--soft">
-            <h3>How to respond to reviews professionally</h3>
-            <p>Templates and tone that protect your brand and increase conversions.</p>
-            <a class="textLink" href="#contact">Ask for review support →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head section__head--onDark">
           <h2>FAQ</h2>
           <p>Quick answers for prospects who click your cold email.</p>
         </div>
@@ -559,20 +603,18 @@
             <div class="contact__meta">
               <div class="metaCard">
                 <div class="metaCard__label">Email</div>
-                <div class="metaCard__value" id="emailText">hello@gardinalsolutions.com</div>
-                <div class="metaCard__note">Replace with your real email later</div>
+                <div class="metaCard__value" id="emailText">ravindugardinal@gmail.com</div>
+                <div class="metaCard__note">Fast reply by email</div>
               </div>
               <div class="metaCard">
-                <div class="metaCard__label">WhatsApp</div>
-                <div class="metaCard__value">Add later</div>
+                <div class="metaCard__label">Phone / WhatsApp</div>
+                <div class="metaCard__value">+94 712259466</div>
                 <div class="metaCard__note">International-friendly support</div>
               </div>
             </div>
           </div>
 
-          <!-- CHANGE: Jotform embedded (replaces old HTML form) -->
           <div class="form" id="leadForm">
-            <!-- A small dynamic label ABOVE the embedded form -->
             <div class="form__row">
               <label id="contactCtaLabel" style="display:block;">Request free preview</label>
               <div class="fine" id="contactCtaNote" style="margin-top:6px;">
@@ -617,7 +659,8 @@
         <div class="footer__links">
           <a href="#services">Services</a>
           <a href="#pricing">Pricing</a>
-          <a href="#insights">Insights</a>
+          <a href="#about">About</a>
+          <a href="#extra">Extra</a>
           <a href="#contact">Free preview</a>
         </div>
       </div>
@@ -628,45 +671,5 @@
       <a class="btn btn--small" href="#contact">Free preview + 1 article</a>
     </div>
   </main>
-
-  <!-- CHANGE: minimal inline JS for plan click -> label + (optional) iframe prefill -->
-  <script>
-    (function () {
-      const frame = document.getElementById("jotformFrame");
-      const label = document.getElementById("contactCtaLabel");
-
-      const BASE_FORM_URL = "https://form.jotform.com/260375550677060";
-
-      function setCtaByPlan(planName) {
-        const isPreview = (planName || "").toLowerCase().includes("preview");
-        const text = isPreview ? "Request free preview" : "Let's Get Started";
-        if (label) label.textContent = text;
-
-        // Optional prefill attempt:
-        // If your Jotform has a field that can be prefilled by query string key "selectedPlan",
-        // it will auto-fill. If not, the form still works normally.
-        if (frame) {
-          const url = BASE_FORM_URL + "?selectedPlan=" + encodeURIComponent(planName || "Preview Starter");
-          frame.src = url;
-        }
-      }
-
-      // Default state
-      setCtaByPlan("Preview Starter");
-
-      // Pricing CTAs drive label + prefill
-      document.querySelectorAll(".js-planCta").forEach((cta) => {
-        cta.addEventListener("click", () => {
-          const plan = cta.getAttribute("data-plan") || "Preview Starter";
-          setCtaByPlan(plan);
-        });
-      });
-
-      // Any generic link to #contact defaults to Preview Starter behavior
-      document.querySelectorAll('a[href="#contact"]:not(.js-planCta)').forEach((a) => {
-        a.addEventListener("click", () => setCtaByPlan("Preview Starter"));
-      });
-    })();
-  </script>
 </body>
 </html>
